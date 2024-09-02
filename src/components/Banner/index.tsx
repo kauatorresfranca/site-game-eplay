@@ -5,16 +5,12 @@ import Button from '../Button'
 import { Game } from '../../Pages/Home'
 import { useEffect, useState } from 'react'
 
-import { fromataPreco } from '../ProductsList'
+import { formataPreco } from '../ProductsList'
+
+import { useGetFeatureGameQuery } from '../../services/api'
 
 const Banner = () => {
-  const [game, setGame] = useState<Game>()
-
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/eplay/destaque')
-      .then((res) => res.json())
-      .then((res) => setGame(res))
-  }, [])
+  const { data: game, isLoading } = useGetFeatureGameQuery()
 
   if (!game) {
     return <h3>carregando...</h3>
@@ -27,8 +23,8 @@ const Banner = () => {
           <Tag size="big">Destaque do dia</Tag>
           <Titulo>{game?.name}</Titulo>
           <Precos>
-            De <span>{fromataPreco(game.prices.old)}</span> <br />
-            por apenas {fromataPreco(game.prices.current)}
+            De <span>{formataPreco(game.prices.old)}</span> <br />
+            por apenas {formataPreco(game.prices.current)}
           </Precos>
         </div>
         <Button
