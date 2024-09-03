@@ -1,7 +1,5 @@
 import Button from '../Button'
 
-import starWars from '../../assets/images/starWars.png'
-
 import {
   CartContainer,
   Overlay,
