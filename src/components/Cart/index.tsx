@@ -1,4 +1,11 @@
+import { useDispatch, useSelector } from 'react-redux'
+
+import Tag from '../Tag'
 import Button from '../Button'
+
+import { formataPreco } from '../ProductsList'
+import { RootReducer } from '../../store'
+import { close, remove } from '../../store/reducers/cart'
 
 import {
   CartContainer,
@@ -8,11 +15,6 @@ import {
   Quantity,
   CartItem
 } from './styles'
-import Tag from '../Tag'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootReducer } from '../../store'
-import { close, remove } from '../../store/reducers/cart'
-import { formataPreco } from '../ProductsList'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
