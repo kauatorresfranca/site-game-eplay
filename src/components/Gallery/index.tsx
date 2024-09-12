@@ -6,8 +6,6 @@ import play from '../../assets/images/play.png'
 import zoom from '../../assets/images/zoom.png'
 import closeIcon from '../../assets/images/close.png'
 
-import { GalleryItem } from '../../Pages/Home'
-
 import * as S from './styles'
 
 type Props = {
