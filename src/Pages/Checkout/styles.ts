@@ -70,7 +70,7 @@ export const TabButton = styled.button<TabButtonProps>`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-    margin-top 8px;
+    margin-top: 8px;
     width: 100%;
   }
 `
